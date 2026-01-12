@@ -6,6 +6,7 @@ public class Visit {
      * Constructor for a medical visit
      * Each visit is associated with exactly one patient
      */
+    private Visit visit;
     private LocalDate date;
     private Patient patient;
     private String doctor;
@@ -25,6 +26,7 @@ public class Visit {
         this.patient = patient;
         this.doctor = doctor;
         this.medications = medications;
+        this.visit = visit;
     }
 
     public LocalDate getDate() {

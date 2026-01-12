@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -5,7 +6,6 @@ import java.util.List;
  */
 
 public class VisitManagment {
-
 
 
     private List<Visit> visits = new ArrayList<>();
@@ -25,7 +25,7 @@ public class VisitManagment {
     }
 
 
-    public void printReport(){
+    public void printReport() {
         //just for formating
         System.out.println("=".repeat(80));
         System.out.println("PATIENT VISIT REPORT");
@@ -37,4 +37,28 @@ public class VisitManagment {
         System.out.println(" Valid records processed: " + visits.size());
         System.out.println(" Empty lines rejected: " + emptyLines);
     }
+
+    LocalDate min = null, max = null;
+    int medsCount = 0;
+
+    for( Visit visit : visits){
+        LocalDate date = visit.getDate();
+
+        if (date != null) {
+            if (min == null || date.isBefore(min)) {
+                min = date;
+            }
+            if (max == null || date.isAfter(max)) {
+                max = date;
+            }
+        }
+
+        if (visit.tookMedication()) {
+            medsCount++;
+        }
+
+        System.out.println("Date range: " + min + " --> " + max);
+        System.out.println("Visits with medications: " + medsCount);
+    }
+
 }

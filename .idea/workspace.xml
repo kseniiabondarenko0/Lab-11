@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd6f2b3-cd92-467a-9b33-77ce6c994e62" name="Changes" comment="work with Parse the data">
+    <list default="true" id="cbd6f2b3-cd92-467a-9b33-77ce6c994e62" name="Changes" comment="Create classes Patient and Visit. redo DataParse v2.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataParse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataParse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VisitManagment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisitManagment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,25 +24,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="389SB5tpR3wotBG5w6s475GR3vh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/Users/ksunabondarenko/IdeaProjects/Lab11/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/ksunabondarenko/IdeaProjects/Lab11/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -72,7 +73,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768212449897</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Create classes Patient and Visit. redo DataParse">
+      <option name="closed" value="true" />
+      <created>1768213881051</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1768213881051</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Create classes Patient and Visit. redo DataParse v2.0">
+      <option name="closed" value="true" />
+      <created>1768214448739</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1768214448739</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,7 +106,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="work with Parse the data" />
-    <option name="LAST_COMMIT_MESSAGE" value="work with Parse the data" />
+    <MESSAGE value="Create classes Patient and Visit. redo DataParse" />
+    <MESSAGE value="Create classes Patient and Visit. redo DataParse v2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create classes Patient and Visit. redo DataParse v2.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
