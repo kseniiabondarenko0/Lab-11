@@ -1,4 +1,7 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 
 /**
@@ -8,9 +11,43 @@ import java.io.File;
  */
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         File file = new File("src/Introduction to Programming 2025 Data.csv");
+
+        VisitManagment manager = new VisitManagment();
+        VisitParser parser = new VisitParser();
+
+
+        BufferedReader reader = new BufferedReader(
+                new FileReader("Introduction to Programming 2025 Data.csv"));
+
+        String line;
+        boolean firstLine = true;
+
+        while ((line = reader.readLine()) != null) {
+            manager.incrementTotalLines();
+
+            if (firstLine) {
+                firstLine = false;
+                continue;
+            }
+
+            if (line.trim().isEmpty()) {
+                manager.incrementEmptyLines();
+                System.out.println("Warning: empty line rejected");
+                continue;
+            }
+
+            String[] parts = line.split(",", 2);
+            if (parts.length != 2) continue;
+
+            Visit visit = parser.parse(parts[0].trim(), parts[1].trim());
+            manager.addVisit(visit);
+        }
+
+        reader.close();
+        manager.printReport();
 
     }
 }

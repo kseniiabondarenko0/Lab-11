@@ -54,6 +54,12 @@ public class VisitManagment {
         if (visit.tookMedication()) {
             medsCount++;
         }
+
+        if (min != null && max != null) {
+            System.out.println("Date range: " + min + " → " + max);
+        } else {
+            System.out.println("Date range: not available");
+        }
         System.out.println("Date range: " + min + " --> " + max);
         System.out.println("Visits with medications: " + medsCount);
     }

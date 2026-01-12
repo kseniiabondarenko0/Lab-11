@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd6f2b3-cd92-467a-9b33-77ce6c994e62" name="Changes" comment="Create classes Patient and Visit. redo DataParse v2.0">
+    <list default="true" id="cbd6f2b3-cd92-467a-9b33-77ce6c994e62" name="Changes" comment="Create VisitParser to replace DataParse">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VisitManagment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisitManagment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +89,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768214448739</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="VisitManagment finish with printReport">
+      <option name="closed" value="true" />
+      <created>1768215048566</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768215048566</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Create VisitParser to replace DataParse">
+      <option name="closed" value="true" />
+      <created>1768215773108</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1768215773108</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,14 +124,16 @@
     <MESSAGE value="work with Parse the data" />
     <MESSAGE value="Create classes Patient and Visit. redo DataParse" />
     <MESSAGE value="Create classes Patient and Visit. redo DataParse v2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create classes Patient and Visit. redo DataParse v2.0" />
+    <MESSAGE value="VisitManagment finish with printReport" />
+    <MESSAGE value="Create VisitParser to replace DataParse" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create VisitParser to replace DataParse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>13</line>
+          <line>50</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
