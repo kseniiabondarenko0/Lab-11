@@ -43,7 +43,6 @@ public class VisitManagment {
 
     for( Visit visit : visits){
         LocalDate date = visit.getDate();
-
         if (date != null) {
             if (min == null || date.isBefore(min)) {
                 min = date;
@@ -52,11 +51,9 @@ public class VisitManagment {
                 max = date;
             }
         }
-
         if (visit.tookMedication()) {
             medsCount++;
         }
-
         System.out.println("Date range: " + min + " --> " + max);
         System.out.println("Visits with medications: " + medsCount);
     }

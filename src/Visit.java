@@ -29,6 +29,10 @@ public class Visit {
         this.visit = visit;
     }
 
+    public Visit getVisit() {
+        return visit;
+    }
+
     public LocalDate getDate() {
         return date;
     }
