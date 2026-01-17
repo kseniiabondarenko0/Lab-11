@@ -31,6 +31,18 @@ public class VisitManagment {
         System.out.println("PATIENT VISIT REPORT");
         System.out.println("=".repeat(80));
 
+        for (Visit visit : visits) {
+            LocalDate date = visit.getDate();
+            if (date != null) {
+                if (min == null || date.isBefore(min)) min = date;
+                if (max == null || date.isAfter(max)) max = date;
+            }
+            // Logic based on lab rule 6: how many patients took drugs
+            if (visit.tookMedication()) {
+                medsCount++;
+            }
+        }
+
         //print stats
         System.out.println("\nDataset Statistics:");
         System.out.println(" Total lines read: " + totalLines);
@@ -41,27 +53,7 @@ public class VisitManagment {
     LocalDate min = null, max = null;
     int medsCount = 0;
 
-    for( Visit visit : visits){
-        LocalDate date = visit.getDate();
-        if (date != null) {
-            if (min == null || date.isBefore(min)) {
-                min = date;
-            }
-            if (max == null || date.isAfter(max)) {
-                max = date;
-            }
-        }
-        if (visit.tookMedication()) {
-            medsCount++;
-        }
-
-        if (min != null && max != null) {
-            System.out.println("Date range: " + min + " → " + max);
-        } else {
-            System.out.println("Date range: not available");
-        }
-        System.out.println("Date range: " + min + " --> " + max);
-        System.out.println("Visits with medications: " + medsCount);
-    }
-
 }
+
+
+

@@ -14,9 +14,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         File file = new File("src/Introduction to Programming 2025 Data.csv");
+        VisitParser parser = null;
 
         VisitManagment manager = new VisitManagment();
-        VisitParser parser = new VisitParser();
+        parser = new VisitParser();
 
 
         BufferedReader reader = new BufferedReader(

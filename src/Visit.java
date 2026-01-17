@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.List;
 
-public class Visit {
+public class Visit extends Patient{
     /**
      * Constructor for a medical visit
      * Each visit is associated with exactly one patient
@@ -22,6 +22,7 @@ public class Visit {
      */
 
     public Visit(LocalDate date, Patient patient, String doctor, List<String> medications) {
+        super();
         this.date = date;
         this.patient = patient;
         this.doctor = doctor;

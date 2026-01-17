@@ -26,11 +26,13 @@ public class VisitParser {
 
         LocalDate date = LocalDate.parse(dateStr);
 
+
         int age = extractAge(description);
         String phone = extractPhone(description);
         String email = extractEmail(description);
 
-        Patient patient = new Patient(age, phone, email);
+
+        Patient patient = new Patient();
 
         String doctor = extractDoctor(description);
         List<String> meds = extractMedications(description);
@@ -38,10 +40,6 @@ public class VisitParser {
         return new Visit(date, patient, doctor, meds);
     }
 
-    private int extractAge(String text) {
-        Matcher m = AGE_PATTERN.matcher(text);
-        return m.find() ? Integer.parseInt(m.group(1)) : null;
-    }
 
     private int extractAge(String text) {
         Matcher m = AGE_PATTERN.matcher(text);

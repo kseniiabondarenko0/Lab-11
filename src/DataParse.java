@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataParse {
+ public class DataParse {
     private List<DataParse> records;
     private int emptyLines;
 
@@ -14,7 +14,7 @@ public class DataParse {
     /**
      * Constructor initialising the record list and empty line counter.
      */
-    public DataParse(String trim, String trimmed) {
+ /*   public DataParse(String trim, String trimmed) {
         this.records = new ArrayList<>();
         this.emptyLines = 0;
         this.totalLinesRead = 0;
@@ -47,7 +47,7 @@ public class DataParse {
             // Parse the line (expecting CSV format: date,description)
             String[] parts = line.split(",", 2);
             if (parts.length == 2) {
-                DataParse record = new DataParse(parts[0].trim(), parts[1].trim());
+                DataParse record = new DataParse();
                 records.add(record);
             }
 
@@ -89,7 +89,7 @@ public class DataParse {
 
 
         for (DataParse records : records){
-            LocalDate
+
         }
     }
 

@@ -3,7 +3,7 @@ public class Patient {
     private String phoneNumber;
     private String email;
 
-    public Patient(int age, String phoneNumber, String email) {
+    public Patient() {
         this.age = age;
         this.phoneNumber = phoneNumber;
         this.email = email;
