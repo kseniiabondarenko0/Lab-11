@@ -1,75 +1,58 @@
+import java.io.*;
+import java.util.regex.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class VisitParser {
+    private VisitManagment management = new VisitManagment();
 
-    private static final Pattern AGE_PATTERN =
-            Pattern.compile("patient is (\\d{1,3}) years old", Pattern.CASE_INSENSITIVE);
+    public void parse(String fileName, String trim) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                management.incrementTotalLines();
 
-    private static final Pattern PHONE_PATTERN =
-            Pattern.compile("(\\+?\\d{9,15})");
+                if (line.trim().isEmpty()) {
+                    System.out.println("Quality Alert: Empty line ignored.");
+                    management.incrementEmptyLines();
+                    continue;
+                }
 
-    private static final Pattern EMAIL_PATTERN =
-            Pattern.compile("[\\w.-]+@[\\w.-]+");
+                // Split CSV but keep quotes together
+                String[] parts = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", 2);
+                if (parts.length < 2) continue;
 
-    private static final Pattern DOCTOR_PATTERN =
-            Pattern.compile("Doctor:\\s*([A-Z][a-zA-Z]+,\\s*[A-Z][a-zA-Z]+)");
+                // FIX: Remove quotes from date to prevent DateTimeParseException
+                String dateStr = parts[0].replace("\"", "").trim();
+                LocalDate date = LocalDate.parse(dateStr);
 
-    private static final Pattern MEDICATION_PATTERN =
-            Pattern.compile("(took|reported taking) ([a-zA-Z,\\s]+)", Pattern.CASE_INSENSITIVE);
+                String desc = parts[1];
+                Visit visit = new Visit(date);
 
+                // Regex Requirements
+                visit.setAge(match(desc, "The patient is (\\d+) years old", "not found"));
+                visit.setPhone(match(desc, "(\\d{3}-\\d{3}-\\d{3})", "not found"));
+                visit.setEmail(match(desc, "([\\w.-]+@[\\w.-]+\\.[a-z]{2,})", "not found"));
+                visit.setDoctor(match(desc, "Doctor: ([^,]+, [^.]+)", "not found"));
 
-    public Visit parse(String dateStr, String description) {
+                // Medication check (comma-separated list)
+                String meds = match(desc, "(?:took|reported taking), ([^.]+)", null);
+                if (meds != null) {
+                    visit.setMedications(meds);
+                    visit.setHasMeds(true);
+                }
 
-        LocalDate date = LocalDate.parse(dateStr);
-
-
-        int age = extractAge(description);
-        String phone = extractPhone(description);
-        String email = extractEmail(description);
-
-
-        Patient patient = new Patient();
-
-        String doctor = extractDoctor(description);
-        List<String> meds = extractMedications(description);
-
-        return new Visit(date, patient, doctor, meds);
-    }
-
-
-    private int extractAge(String text) {
-        Matcher m = AGE_PATTERN.matcher(text);
-        return m.find() ? Integer.parseInt(m.group(1)) : null;
-    }
-
-    private String extractPhone(String text) {
-        Matcher m = PHONE_PATTERN.matcher(text);
-        return m.find() ? m.group(1) : "not found";
-    }
-
-    private String extractEmail(String text) {
-        Matcher m = EMAIL_PATTERN.matcher(text);
-        return m.find() ? m.group() : "not found";
-    }
-
-    private String extractDoctor(String text) {
-        Matcher m = DOCTOR_PATTERN.matcher(text);
-        return m.find() ? m.group(1) : "not found";
-    }
-
-    private List<String> extractMedications(String text) {
-        Matcher m = MEDICATION_PATTERN.matcher(text);
-        if (!m.find()) return List.of();
-
-        String[] parts = m.group(2).split(",");
-        List<String> meds = new ArrayList<>();
-        for (String p : parts) {
-            meds.add(p.trim());
+                management.addVisit(visit);
+            }
+        } catch (Exception e) {
+            System.out.println("Error reading file: " + e.getMessage());
         }
-        return meds;
     }
+
+    private String match(String text, String regex, String fallback) {
+        Matcher m = Pattern.compile(regex).matcher(text);
+        return m.find() ? m.group(1) : fallback;
+    }
+
+    public void report() { management.printReport(); }
+
 }
