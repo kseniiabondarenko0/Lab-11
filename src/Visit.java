@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.List;
 
-public class Visit extends Patient{
+public class Visit {
     /**
      * Constructor for a medical visit
      * Each visit is associated with exactly one patient
@@ -14,10 +14,12 @@ public class Visit extends Patient{
         private String doctor;
         private String medications = "not found";
         private boolean hasMeds = false;
-
+    /**
+     * @param date The YYYY-mm-dd date of the visit.
+     */
         public Visit(LocalDate date) { this.date = date; }
 
-        // Getters and Setters
+        // // Getters and Setters  (Encapsulation)
         public LocalDate getDate() { return date; }
         public boolean tookMedication() { return hasMeds; }
         public void setHasMeds(boolean hasMeds) { this.hasMeds = hasMeds; }

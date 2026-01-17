@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd6f2b3-cd92-467a-9b33-77ce6c994e62" name="Changes" comment="fixing">
+    <list default="true" id="cbd6f2b3-cd92-467a-9b33-77ce6c994e62" name="Changes" comment="start commenting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Introduction to Programming 2025 Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VisitParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VisitParser.java" afterDir="false" />
     </list>
@@ -123,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768681700790</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="start commenting">
+      <option name="closed" value="true" />
+      <created>1768682735735</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1768682735735</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,14 +152,15 @@
     <MESSAGE value="Create VisitParser to replace DataParse" />
     <MESSAGE value="Finish later. Add comments and Improve class VisitParser. Delete DataParse" />
     <MESSAGE value="fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing" />
+    <MESSAGE value="start commenting" />
+    <option name="LAST_COMMIT_MESSAGE" value="start commenting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>53</line>
+          <line>26</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

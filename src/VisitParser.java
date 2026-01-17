@@ -1,16 +1,23 @@
 import java.io.*;
 import java.util.regex.*;
 import java.time.LocalDate;
-
+/**
+ * Handles the reading of the input CSV and applies Regex patterns
+ * to identify specific patient information.
+ */
 public class VisitParser {
     private VisitManagment management = new VisitManagment();
-
+    /**
+     * Reads the file line by line and applies data quality checks.
+     * @param fileName Path to the CSV data file.
+     */
     public void parse(String fileName, String trim) {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = br.readLine()) != null) {
                 management.incrementTotalLines();
 
+                //Identify and reject empty lines
                 if (line.trim().isEmpty()) {
                     System.out.println("Quality Alert: Empty line ignored.");
                     management.incrementEmptyLines();
@@ -47,7 +54,9 @@ public class VisitParser {
             System.out.println("Error reading file: " + e.getMessage());
         }
     }
-
+    /**
+     * Helper method to find regex matches and return a default if not found
+     */
     private String match(String text, String regex, String fallback) {
         Matcher m = Pattern.compile(regex).matcher(text);
         return m.find() ? m.group(1) : fallback;
