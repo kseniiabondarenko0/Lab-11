@@ -1,6 +1,3 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 
 
@@ -11,19 +8,20 @@ import java.io.IOException;
  */
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        try {
+            // Initialize the parser
+            VisitParser parser = new VisitParser();
 
-// Initialize the parser to handle data extraction
-        VisitParser parser = new VisitParser();
+            // Parse the CSV file
+            parser.parse("src/data.csv");
 
-        // Start reading the CSV file and extracting patient data
-        // Uses the path specified in the project structure
-        parser.parse("src/data.csv", "");
+            // Print the report
+            parser.report();
 
-        // Output the final statistics and date ranges
-        parser.report();
-        VisitManagment manager = new VisitManagment();
-        //manager.printReport();
-
+        } catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
